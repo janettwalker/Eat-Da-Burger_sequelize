@@ -1,21 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
-  var burgers = sequelize.define("burgers", {
-    text: {
-      burger_name: DataTypes.STRING,
-      // AllowNull is a flag that restricts a todo from being entered if it doesn't
-      // have a text value
-      allowNull: false,
-      // len is a validation that checks that our todo is between 1 and 140 characters
-      validate: {
-        len: [1, 140]
-      }
+  var Burger = sequelize.define("Burger", {
+    burger_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     devoured: {
       type: DataTypes.BOOLEAN,
-      // defaultValue is a flag that defaults a new todos complete value to false if
-      // it isn't supplied one
       defaultValue: false
     }
+  }, {
+    classMethods: {
+      associate: function(models) {
+        Burger.hasOne(models.Customer);
+      }
+    }
   });
-  return burgers;
+  return Burger;
 };

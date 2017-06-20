@@ -1,1 +1,1 @@
-# Eat-Da-Burger_sequelize
+# Eat-Da-Burger

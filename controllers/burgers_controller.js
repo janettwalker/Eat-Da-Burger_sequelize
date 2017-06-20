@@ -1,21 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models');
+var db = require('../models/');
 
-
-module.export = function(app) {
-
-app.get('/', function(req, res){
+router.get('/', function(req, res){
   res.redirect('/burgers')
 });
 
-app.get('/burgers', function(req, res){
-  db.findAll({}).then(function(dbburgers){
+router.get('/burgers', function(req, res){
+  burgers.all(function(data){
     var hbsObject = {burgers: data};
 
     console.log(hbsObject);
 
-    res.json('index', hbsObject);
+    res.render('index', hbsObject);
   });
 });
 
@@ -34,5 +31,5 @@ router.put('/burgers/update/:id', function(req, res){
     res.redirect('/burgers');
   });
 });
-};
 
+module.exports = router;

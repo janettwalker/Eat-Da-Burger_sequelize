@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var db = require("./models");
 
 var port = 3000;
 
@@ -25,8 +26,9 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
 
-db.sequelize.sync({ force: true }).then(function(){
-app.listen(port, function(){
+var port = process.env.PORT || 3000;
+db.sequelize.sync().then(function() {
+  app.listen(port);
+});
 	console.log("Listening on Port" + port)
-});
-});
+
