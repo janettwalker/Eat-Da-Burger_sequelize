@@ -13,8 +13,20 @@ body{
 
 .jumbotron {
 	background-color: #E8B92D;
+	height: 300px;
 }
 
 img {
 	width: 200px;
+}
+
+h1 {
+	font-family: 'Sigmar One', cursive;
+}
+
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 40px;
+    }
 }

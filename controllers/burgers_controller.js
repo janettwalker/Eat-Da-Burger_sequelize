@@ -23,22 +23,21 @@ router.post('/burgers/create', function(req, res){
     burger_name: req.body.burger_name
   })
   .then(function(data) {
-    res.redirect('/burgers')
+    res.redirect('/')
   });
 });
 
-router.put('/burgers/update/:id', function(req, res){
+router.put('/burgers/update', function(req, res){
   db.Burger.update({
     devoured: true
   },
   {
     where: {
-      id: req.body.burger_id
+      id: req.body.devoured
     }
   }).then(function(data) {
     res.redirect("/")
 
-  var condition = 'id = ' + req.params.id;
 
   });
 });
