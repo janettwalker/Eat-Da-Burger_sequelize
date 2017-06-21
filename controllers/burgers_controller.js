@@ -7,7 +7,9 @@ router.get('/', function(req, res){
 });
 
 router.get('/burgers', function(req, res){
-  burgers.all(function(data){
+  db.Burger.findAll()
+  .then(function(data){
+
     var hbsObject = {burgers: data};
 
     console.log(hbsObject);
@@ -17,18 +19,27 @@ router.get('/burgers', function(req, res){
 });
 
 router.post('/burgers/create', function(req, res){
-  burgers.create(['burger_name'], [req.body.b_name], function(data){
+  db.Burger.create({
+    burger_name: req.body.burger_name
+  })
+  .then(function(data) {
     res.redirect('/burgers')
   });
 });
 
 router.put('/burgers/update/:id', function(req, res){
+  db.Burger.update({
+    devoured: true
+  },
+  {
+    where: {
+      id: req.body.burger_id
+    }
+  }).then(function(data) {
+    res.redirect("/")
+
   var condition = 'id = ' + req.params.id;
 
-  console.log('condition ', condition);
-
-  burgers.update({'devoured': req.body.devoured}, condition, function(data){
-    res.redirect('/burgers');
   });
 });
 
