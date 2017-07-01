@@ -1,7 +1,7 @@
 <div class="container"> 
   <div class="jumbotron"> 
     <img src="/assets/img/burger.png"> 
-    <h1> Eat-Da-Burger! </h1>
+    <h2> Eat-Da-Burger! </h2>
   </div>
 
    <div class="col-md-10 col-md-offset-1">
@@ -29,11 +29,11 @@
           {{#unless this.devoured}}
           <li class="list-group-item">
             <div class="input-group">
-              <h2 class="lead">{{this.burger_name}} </h2>
+              <h4 class="burgerNames">{{this.burger_name}} </h4>
               <span class="input-group-btn">
                 <form action="burgers/update/?_method=PUT" method="POST">
                   <input type="hidden" name="devoured" value={{this.id}}>
-                  <button class="btn btn-warning btn-sm" name="burger_id" type="submit"> DEVOUR IT! </button>
+                  <button class="btn btn-warning btn-sm" name="devoured" type="submit"> DEVOUR IT! </button>
                 </form>
               </span>
             </div>
@@ -48,11 +48,11 @@
     {{!-- burger list after being eaten --}}
   <div class="row">
     <div class="col-md-4 col-md-offset-2">
-      <div class="panel panel-default">
-        {{#each burger}}
+      <div class="panel-panel default">
+        {{#each burgers}}
           {{#if this.devoured}}
-            <input class="form-control" type="text" placeholder="{{this.burger_name}}" readonly>
-        {{/if}}
+            <input class="form-control burgerNames" type="text" placeholder="{{this.burger_name}}">
+          {{/if}}
         {{/each}}
       </div>
     </div>

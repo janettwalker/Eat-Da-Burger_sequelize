@@ -3,8 +3,14 @@
 	text-align: center;
 }
 
+.burgerNames {
+	text-align: left;
+}
+
 body{
-	background-color: #E8B92D;
+/*	background-color: #E8B92D;*/
+    background-image: url("/assets/img/food.png");
+    background-repeat: repeat;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 1.42857143;
@@ -12,21 +18,33 @@ body{
 }
 
 .jumbotron {
-	background-color: #E8B92D;
 	height: 300px;
+	background-color: transparent;
 }
+ .readonly {
+	background-color: white;
+	color: black;
+ }
 
 img {
 	width: 200px;
+	margin-top: 20px;
 }
 
-h1 {
+h2 {
 	font-family: 'Sigmar One', cursive;
+	font-size: 55px;
 }
 
 
 @media screen and (max-width: 900px) {
-    h1 {
+    h2 {
         font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h2 {
+        font-size: 30px;
     }
 }
