@@ -2,9 +2,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var db = require("./models");
-
-var port = 3000;
-
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -28,9 +25,9 @@ app.use("/", routes);
 app.use("/update", routes);
 app.use("/create", routes);
 
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 db.sequelize.sync().then(function() {
-  app.listen(port);
+  app.listen(PORT);
 });
-	console.log("Listening on Port" + port)
+	console.log("Listening on Port" + PORT)
 
