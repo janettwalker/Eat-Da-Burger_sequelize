@@ -2,7 +2,7 @@
   "development": {
     "username": "b0ntpnjlipkzboqr",
     "password": "rcw3qoyk41awuh0b",
-    "database": "burger",
+    "database": "d78wmegfr576fje5",
     "host": "ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
@@ -16,7 +16,7 @@
   "production": {
    "username": "b0ntpnjlipkzboqr",
     "password": "rcw3qoyk41awuh0b",
-    "database": "burger",
+    "database": "d78wmegfr576fje5",
     "host": "ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
